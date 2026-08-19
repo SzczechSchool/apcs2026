@@ -1,5 +1,5 @@
 Name: Kyle Szczech
-Grade:Junior
+Grade: Junior
 Favorite Programming Language: C
 Favorite Thing About Computer Science: Solving Leetcode problems
 Something I Am Good At: Chemistry

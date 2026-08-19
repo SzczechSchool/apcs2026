@@ -1,6 +1,6 @@
-Name:
-Grade:
-Favorite Programming Language:
-Favorite Thing About Computer Science:
-Something I Am Good At:
-Something I Want To Learn:
+Name: Kyle Szczech
+Grade:Junior
+Favorite Programming Language: C
+Favorite Thing About Computer Science: Solving Leetcode problems
+Something I Am Good At: Chemistry
+Something I Want To Learn: Actual app development skills

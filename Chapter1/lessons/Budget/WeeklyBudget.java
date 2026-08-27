@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.util.Scanner;
+import java.text.NumberFormat;
 
 /**
  * Weekly Budget
@@ -24,6 +25,8 @@ public class WeeklyBudget
         String name;
         double allowance, lunchPrice, totalCost, remaining;
         int lunchesPerWeek;
+        
+        NumberFormat money = NumberFormat.getCurrencyInstance();
         
         // Instantiate the Scanner object to read from the keyboard
         Scanner scanf = new Scanner(System.in);
@@ -40,13 +43,18 @@ public class WeeklyBudget
         lunchPrice = scanf.nextDouble();
         
         // Reading integer
-        System.out.print("Enter the weekly number of lunches");
+        System.out.print("Enter the weekly number of lunches: $");
         lunchesPerWeek = scanf.nextInt();
         
         // Calculate cost and remaining
         totalCost = lunchesPerWeek * lunchPrice;
         remaining = allowance - totalCost;
         
+        System.out.printf("%n--- Weekly Budget Summary for %s ---%n",name);
+        
+        System.out.printf("%-25s %s%n", "Weekly Allowance", money.format(allowance));
+        System.out.printf("%-25s %s%n", "Balance Spent On Lunches", money.format(totalCost));
+        System.out.printf("%-25s %s%n", "Remaining Balance", money.format(remaining));
         
         
     }

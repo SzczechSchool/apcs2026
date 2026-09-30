@@ -34,54 +34,83 @@ public class MovieTicketPricer
         // set matinee to true if the user enters "y"
         System.out.print("Is this a matinee showtime? (y/n)");
         String isMatinee = scan.next();
-        boolean matinee = false;
-        if ( isMatinee.toLowerCase().equals("y")){
-            matinee = true;
-        }
+        boolean matinee = switch (isMatinee){
+            case "y" -> true;
+            default -> false;
+        };
+        
+        
+        
         //set pass
         System.out.print("Do you have a pass? (y/n)");
         String isPass = scan.next();
         boolean pass = isPass.toLowerCase().equals("y");
         
         double actualPrice;
-        if(format == 1){
-             if ( pass && matinee || age < 13 || age >= 65){
-            actualPrice = DISCOUNT_PRICE;
-            System.out.println(" Your ticket cost: " + DISCOUNT_PRICE);
-        }
-        else{
-            actualPrice = REGULAR_PRICE;
-        System.out.println(" Your ticket cost: " + REGULAR_PRICE);
-        }
         
+        if ( age < 13 || age >= 65){ 
+            actualPrice = switch(format){
+            case 1 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE;
+                    default: acutalPrice = REGULAR_PRICE;};
+                default: acutalPrice = REGULAR_PRICE;};
+            case 2 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE + IMAX_SURCHARGE;
+                    default: acutalPrice = REGULAR_PRICE + IMAX_SURCHARGE;};
+                default: acutalPrice = REGULAR_PRICE + IMAX_SURCHARGE;};
+            case 3 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE + IMAX_70MM_SURCHARGE;
+                    default: acutalPrice = REGULAR_PRICE + IMAX_70MM_SURCHARGE;};
+                default: acutalPrice = REGULAR_PRICE + IMAX_70MM_SURCHARGE;};
+            default : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE;
+                    default: acutalPrice = REGULAR_PRICE;};
+                default: acutalPrice = REGULAR_PRICE;};
+            };}
+            else {
+                 actualPrice = switch(format){
+            case 1 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE;
+                    default: acutalPrice = REGULAR_PRICE;};
+                default: acutalPrice = REGULAR_PRICE;};
+            case 2 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE + IMAX_SURCHARGE;
+                    default: acutalPrice = REGULAR_PRICE + IMAX_SURCHARGE;};
+                default: acutalPrice = REGULAR_PRICE + IMAX_SURCHARGE;};
+            case 3 : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE + IMAX_70MM_SURCHARGE;
+                    default: acutalPrice = REGULAR_PRICE + IMAX_70MM_SURCHARGE;};
+                default: acutalPrice = REGULAR_PRICE + IMAX_70MM_SURCHARGE;};
+            default : actualPrice = switch(matinee){
+                case "y": actualPrice = switch(pass){
+                    case "y" : actualPrice = DISCOUNT_PRICE;
+                    default: acutalPrice = REGULAR_PRICE;};
+                default: acutalPrice = REGULAR_PRICE;};};
+        }}}
         
-    }
-    else if ( format == 2){
-         if ( pass && matinee || age < 13 || age >= 65){
-            actualPrice = DISCOUNT_PRICE + IMAX_SURCHARGE;
-            System.out.println(" Your ticket cost: " + DISCOUNT_PRICE + " (IMAX surcharge applied)");
-        }
-        else{
-            actualPrice = REGULAR_PRICE + IMAX_SURCHARGE;
-        System.out.println(" Your ticket cost: " + REGULAR_PRICE + " (IMAX surcharge applied)");
-    }
-    
-}
-else if(format == 3){
-         if ( pass && matinee || age < 13 || age >= 65){
-            actualPrice = DISCOUNT_PRICE + IMAX_70MM_SURCHARGE;
-            System.out.println(" Your ticket cost: " + DISCOUNT_PRICE + " (IMAX70mm surcharge applied)");
-        }
-        else{
-            actualPrice = REGULAR_PRICE + IMAX_70MM_SURCHARGE;
-        System.out.println(" Your ticket cost: " + REGULAR_PRICE + " (IMAX70mm surcharge applied)");
-    }}
-else{ if ( pass && matinee || age < 13 || age >= 65){
-            actualPrice = DISCOUNT_PRICE;
-            System.out.println(" Your ticket cost: " + DISCOUNT_PRICE);
-        }
-        else{
-            actualPrice = REGULAR_PRICE;
-        System.out.println(" Your ticket cost: " + REGULAR_PRICE);}}}}
+        String gradeLevel = switch(gradeNumber){
+            case 1: "first grade";
+            case 2: "second grade";
+            case 3:;
+            case 4:;
+            case 5:;
+            case 6:;
+            case 7:;
+            case 8:;
+            case 9:;
+            case 10:; 
+            case 11:;
+            case 12: "Seinor";
+            defualt:;
+        };
+            
+         
 
 

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BankAccount
+comment0.text=\r\n\ IDK\ Bo\r\n\r\n\ Kyle\ Szczech\r\n\ 11/4\r\n
+comment1.params=
+comment1.target=BankAccount()
+comment2.params=nme\ trans\ bal
+comment2.target=BankAccount(java.lang.String,\ int,\ double)
+comment3.params=withdraw
+comment3.target=boolean\ withdraw(double)
+numComments=4

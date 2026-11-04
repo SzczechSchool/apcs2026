@@ -16,13 +16,18 @@ public class FindTheFifa
    String playerName = scan.next();
    int length = playerName.length();
    
-   while (playerName != scanFifa.subtring(7, 7 + length)){
+   while (playerName != scanFifa.substring(7, 7 + length)){
    
    String currentLine = scanFifa.next();
    
    
    
 }
+System.out.println(scanFifa);
+scanFifa.next();
+System.out.println(scanFifa);
+scanFifa.next();
+System.out.println(scanFifa);
    
    
    

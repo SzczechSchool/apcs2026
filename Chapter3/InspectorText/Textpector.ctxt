@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Textpector
+comment0.text=\r\n\ Uses\ iteration\ though\ strings\ to\ inspect\ text\r\n\r\n\ @Kyle\r\n\ @10/5\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
